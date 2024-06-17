@@ -5,5 +5,6 @@ const pessoaController = new PessoaController();
 const router = Router();
 
 router.get('/pessoas', (req, res) => pessoaController.pegaTodos(req, res) );
+router.get('/pessoas/:id', (req, res) => pessoaController.pegaUmPorID(req, res));
 
 module.exports = router;
