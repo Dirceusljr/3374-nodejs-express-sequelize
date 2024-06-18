@@ -1,4 +1,4 @@
-const PessoaServices = require('../services/PessoaServices');
+const PessoaServices = require('../services/PessoaServices.js');
 const Controller = require('./Controller');
 
 const pessoaServices = new PessoaServices();
