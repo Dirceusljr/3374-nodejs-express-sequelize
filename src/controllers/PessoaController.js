@@ -15,7 +15,7 @@ class PessoaController extends Controller{
       const listaMatriculadas = await pessoaServices.pegaMatriculasPorEstudante(Number(estudanteId));
       return res.status(200).json(listaMatriculadas);
     } catch (erro) {
-      return res.status(500).json({ erro: erro.message});
+      //erro
     }
   }
 }
