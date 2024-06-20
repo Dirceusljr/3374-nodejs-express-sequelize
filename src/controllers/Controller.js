@@ -8,7 +8,7 @@ class Controller {
       const listaDeRegistros = await this.entidadeService.pegaTodosOsRegistros();
       return res.status(200).json(listaDeRegistros);
     } catch (erro) {
-      //erro
+      return res.status(500).json({ erro: erro.message});
     }
   }
 
@@ -18,7 +18,7 @@ class Controller {
       const umRegistro = await this.entidadeService.pegaUmRegistroPorId(Number(id));
       return res.status(200).json(umRegistro);
     } catch (erro) {
-      //erro
+      return res.status(500).json({ erro: erro.message});
     }
   }
 
@@ -28,7 +28,7 @@ class Controller {
       const novoRegistro = await this.entidadeService.criaNovoRegistro(dadosParaCriacao);
       return res.status(201).json({message:'Registro criado com sucesso', novoRegistro});
     } catch (erro) {
-      //erro
+      return res.status(500).json({ erro: erro.message});
     }
   }
 
@@ -42,7 +42,7 @@ class Controller {
       }
       return res.status(200).json({message: 'Registro atualizado com sucesso'});
     } catch (erro) {
-      //erro
+      return res.status(500).json({ erro: erro.message});
     }
   }
 
@@ -52,7 +52,7 @@ class Controller {
       await this.entidadeService.excluiRegistro(Number(id));
       return res.status(200).json({message: 'Registro excluído com sucesso'});
     } catch (erro) {
-      //erro
+      return res.status(500).json({ erro: erro.message});
     }
   }
 
